@@ -1,0 +1,11 @@
+<section class="listado">
+    <img class="listado-foto" [src]="vuelo.foto">
+    <h2 class="listado-orgYdest">Origen: {{ vuelo.origen }}</h2>
+    <h2 class="listado-orgYdest">Destino: {{ vuelo.destino }}</h2>
+    <p class="listado-info">Asientos Disponibles: {{ vuelo.asientosDisponibles}}, Precio: {{vuelo.precio }}</p>
+   
+    <a [routerLink]="['/detalle', vuelo.id]">Ver más</a>
+   
+   <button type="button" (click)="deleteVuelo()" [disabled]="!vuelo">Eliminar</button> 
+   <button [routerLink]="['/modificarVuelo', vuelo.id]">Modificar</button> 
+  </section>

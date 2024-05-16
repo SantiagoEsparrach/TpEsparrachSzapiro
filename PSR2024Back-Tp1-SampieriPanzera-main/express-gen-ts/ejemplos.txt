@@ -1,0 +1,23 @@
+sintaxis agregar vuelo:
+{
+  "vuelos":{
+    "id": 2,
+    "origen": "Brazil",
+    "destino": "Argentina",
+    "foto": "/assets/images/Obelisco.jpg",
+    "asientosDisponibles": 20,
+    "precio": 20000,
+    "pasajeros": [
+          
+    ]
+  }
+}
+
+sintaxis agregar pasajero:
+{
+  "pasajeros":{
+    "mail": "juanchi.sampieri@gmail.com",
+    "nombre": "Juan",
+    "apellido": "Sampieri"
+  }
+}

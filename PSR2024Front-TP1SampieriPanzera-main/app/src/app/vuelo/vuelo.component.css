@@ -1,0 +1,57 @@
+.listado {
+    background: var(--accent-color);
+    border-radius: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+  .listado-orgYdest {
+    color: var(--primary-color);
+    padding: 10px 20px 0 20px;
+  }
+  .listado-foto {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+  }
+  .listado-info {
+    padding: 10px 20px 20px 20px;
+  }
+  
+  
+  section.listado a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  section.listado a::after {
+    content: "\203A";
+    margin-left: 5px;
+  }
+
+
+  /* Botones */
+
+  .listado button {
+    padding: 10px 20px; /* Ajuste del padding */
+    margin-right: 10px; /* Espaciado derecho entre botones */
+    border: none; /* Quita el borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+
+    padding: 0; /* Quita el relleno */
+    margin-right: 10px; /* Espaciado derecho entre botones */
+    border: none; /* Quita el borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+    transition: color 0.3s; /* Transición suave para el color del texto */
+    background: none; /* Quita el fondo */
+    margin-left: 20px;
+    
+  }
+  
+  .listado button:hover {
+    color: var(--primary-color); 
+    border-bottom: 2px solid var(--primary-color); 
+  }
+  

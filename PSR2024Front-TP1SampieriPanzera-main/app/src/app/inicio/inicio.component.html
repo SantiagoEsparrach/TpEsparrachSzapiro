@@ -1,0 +1,24 @@
+<header>
+  <div class="container">
+      <div class="logo">
+          <img src="assets/images/Logo.png" alt="Panchieri Airlines">
+      </div>
+      
+      <button id="agregarVuelo" [routerLink]="['/agregarVuelo',]">Agregar Vuelo</button>
+      
+      <nav>
+        <section>
+          <form id="barraBusqueda" (submit)="onSubmit($event, filtro.value)">
+            <input type="text" placeholder="Filtrar por destino" #filtro>
+            <button class="primary" type="button" (click)="filtrarResultados(filtro.value)">Buscar</button>
+          </form>
+        </section>
+      </nav>
+  </div>
+</header>
+
+<section class="resultados">
+    <app-vuelo *ngFor="let vuelo of resultados" [vuelo]="vuelo">
+  </app-vuelo>
+</section>
+

@@ -1,0 +1,19 @@
+{
+    "id" : 1,
+    "destino" : "Brasil",
+    "origen" : "CABA",
+    "avion" : "boeing 747",
+    "precio" : 500000,
+    "capacidad": 10,
+    "pasajeros" : [
+        {
+            "dni" : 46878279,
+            "nombre" : "Juan",
+            "apellido" : "Sampieri",
+            "mail" : "juanchi.sampieri@gmail.com"
+        },
+        {
+            
+        }
+    ] 
+}

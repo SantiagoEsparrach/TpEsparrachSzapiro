@@ -1,0 +1,23 @@
+<header>
+  <div class="container">
+      <div class="logo">
+          <img src="assets/images/Logo.png" alt="Panchieri Airlines">
+      </div>
+  </div>
+</header>
+
+
+<section class="listado-apply">
+    <h2 class="section-heading">Modificar al pasajero</h2>
+    <form [formGroup]="applyForm" (submit)="submitApplication()">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" formControlName="nombre">
+
+      <label for="apellido">Apellido</label>
+      <input id="apellido" type="text" formControlName="apellido">
+
+      <label for="email">Correo electrónico</label>
+      <input id="email" type="email" formControlName="email">
+      <button type="submit" class="primary" (click)="submitApplication()">Aplicar cambios</button>
+    </form>
+  </section>

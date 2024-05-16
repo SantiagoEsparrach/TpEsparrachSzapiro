@@ -1,0 +1,31 @@
+<header>
+  <div class="container">
+      <div class="logo">
+          <img src="assets/images/Logo.png" alt="Panchieri Airlines">
+      </div>
+  </div>
+</header>
+
+
+<section class="listado-apply">
+    <h2 class="section-heading">Modificar al vuelo</h2>
+    <form [formGroup]="applyForm" (submit)="submitApplication()">
+    
+      <label for="origen">Origen</label>
+      <input id="origen" type="text" formControlName="origen">
+
+      <label for="destino">Destino</label>
+      <input id="destino" type="text" formControlName="destino">
+
+      <label for="asientosDisponibles">Asientos Disponibles</label>
+      <input id="asientosDisponibles" type="number" formControlName="asientosDisponibles" min="1">
+
+      <label for="foto">Foto</label>
+      <input id="foto" type="text" formControlName="foto">
+
+      <label for="precio">Precio</label>
+      <input id="precio" formControlName="precio" id="precio">
+
+      <button type="submit" class="primary" (click)="submitApplication">Aplicar cambios</button>
+    </form>
+  </section>
