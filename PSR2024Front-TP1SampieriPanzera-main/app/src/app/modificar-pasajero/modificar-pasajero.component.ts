@@ -19,7 +19,8 @@ export class ModificarPasajeroComponent {
   applyForm = new FormGroup({
     nombre: new FormControl(''),
     apellido: new FormControl(''),
-    email: new FormControl('')
+    email: new FormControl(''),
+    dni: new FormControl('')
   });
 
   public modificarPasajero(idVuelo: number, mail: string, formData: any){
@@ -27,7 +28,8 @@ export class ModificarPasajeroComponent {
       pasajeros: {
         mail: formData.email,
         nombre: formData.nombre,
-        apellido: formData.apellido
+        apellido: formData.apellido,
+        dni: formData.dni
       }
     };
     return this.servicioPasajeros.modificarPasajero(idVuelo, mail, body).subscribe()

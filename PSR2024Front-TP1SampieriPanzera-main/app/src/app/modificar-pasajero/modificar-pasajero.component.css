@@ -46,7 +46,8 @@ header {
   }
   
   input[type="text"],
-  input[type="email"] {
+  input[type="email"],
+  input[type="number"] {
     width: 95%; /* Ancho completo */
     padding: 10px; /* Espaciado interno */
     margin-bottom: 20px; /* Espacio inferior */

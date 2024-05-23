@@ -39,7 +39,8 @@ export class DetalleComponent {
   applyForm = new FormGroup({
     nombre: new FormControl(''),
     apellido: new FormControl(''),
-    email: new FormControl('')
+    email: new FormControl(''),
+    dni: new FormControl('')
   });
 
   constructor() {
@@ -66,7 +67,8 @@ export class DetalleComponent {
       pasajeros: {
         mail: formData.email,
         nombre: formData.nombre,
-        apellido: formData.apellido
+        apellido: formData.apellido,
+        dni: formData.dni
       }
     };
     return this.servicioPasajeros.addPasajero(idVuelo, body).subscribe()

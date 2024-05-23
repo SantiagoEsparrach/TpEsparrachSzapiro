@@ -13,6 +13,7 @@ export interface IPasajero {
     mail: string;
     nombre: string;
     apellido: string;
+    dni: number;
 }
   
 
@@ -26,11 +27,13 @@ function new_(
     mail?: string,
     nombre?: string,
     apellido?: string,
+    dni?: number,
 ): IPasajero {
   return {
     mail: (mail ?? ''),
     nombre: (nombre ?? ''),
     apellido: (apellido ?? ''),
+    dni: (dni ?? 0),
   };
 }
 
@@ -42,7 +45,7 @@ function from(param: object): IPasajero {
     throw new Error(INVALID_CONSTRUCTOR_PARAM);
   }
   const p = param as IPasajero;
-  return new_(p.mail, p.nombre, p.apellido);
+  return new_(p.mail, p.nombre, p.apellido, p.dni);
 }
 
 /**
@@ -54,7 +57,8 @@ function isPasajero(arg: unknown): boolean {
     typeof arg === 'object' &&
     'mail' in arg && typeof arg.mail === 'string' && 
     'nombre' in arg && typeof arg.nombre === 'string' && 
-    'apellido' in arg && typeof arg.apellido === 'string'
+    'apellido' in arg && typeof arg.apellido === 'string' && 
+    'dni' in arg && typeof arg.dni === 'number'
   );
 }
 

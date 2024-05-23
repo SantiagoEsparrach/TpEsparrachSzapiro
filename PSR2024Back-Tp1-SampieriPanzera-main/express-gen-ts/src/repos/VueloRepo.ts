@@ -161,7 +161,7 @@ async function deletePasajero(id: number, mail: string): Promise<void> {
         vuelo.pasajeros.splice(pasajeroIndex, 1);
         vuelo.asientosDisponibles++;
         await orm.saveDb(db);
-      } 
+      }
     }
   }
 
