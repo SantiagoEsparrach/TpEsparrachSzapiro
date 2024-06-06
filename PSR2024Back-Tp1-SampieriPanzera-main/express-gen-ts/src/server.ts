@@ -20,25 +20,27 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
 
+import {db} from './sql/connection';
+import { defineAssosation } from './models/sequelize';
 
 // **** Variables **** //
 const cors = require('cors');
 const app = express();
+db();
+defineAssosation();
 
 app.use(cors());
 // **** Setup **** //
 
 // Basic middleware
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(EnvVars.CookieProps.Secret));
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-
 
 // Show routes called in console during development
 if (EnvVars.NodeEnv === NodeEnvs.Dev.valueOf()) {
@@ -71,7 +73,6 @@ app.use((
   return res.status(status).json({ error: err.message });
 });
 
-
 // ** Front-End Content ** //
 
 // Set views directory (html)
@@ -92,7 +93,5 @@ app.get('/users', (_: Request, res: Response) => {
   return res.sendFile('users.html', { root: viewsDir });
 });
 
-
 // **** Export default **** //
-
 export default app;

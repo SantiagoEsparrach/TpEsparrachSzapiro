@@ -1,34 +1,23 @@
-import { Sequelize } from 'sequelize-typescript';
-import Mascota from '../models/Pasajero';
-import Vacuna from '../models/User';
-import MascotaVacuna from '../models/Vuelo';
-import Pasajero from '@src/models/Pasajero';
-import User from '@src/models/User';
-import Vuelo from '@src/models/Vuelo';
+import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize({
-  database: 'pasajeros',
-  dialect: 'mysql',
-  username: 'root',
-  password: 'root',
+const sequelize = new Sequelize('vuelos', 'alumno', 'alumnoipm', {
   host: 'localhost',
-  port: 3306,
+  dialect: 'mysql',
   logging: console.log,
-  models: [Pasajero, User, Vuelo], 
 });
-
-sequelize.authenticate()
-  .then(() => {
+export async function db(){
+  try{
+    await sequelize.sync({force:true})
+    console.log("todo ok");
+  } catch (err){
+    console.error("todo mal")
+  }
+  try {
+    await sequelize.authenticate();
     console.log('Connection has been established successfully.');
-
-    // Sync all models including MascotaVacuna
-    return sequelize.sync({ alter: true });
-  })
-  .then(() => {
-    console.log('Database and tables have been created.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+}
 
 export default sequelize;

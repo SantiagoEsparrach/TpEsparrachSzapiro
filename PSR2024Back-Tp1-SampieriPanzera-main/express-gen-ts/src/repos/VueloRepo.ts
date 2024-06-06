@@ -1,12 +1,13 @@
 import { IUser } from '@src/models/User';
 import { getRandomInt } from '@src/util/misc';
 import orm from './MockOrm';
-import { IVuelo } from '@src/models/Vuelo';
+import  { IVuelo } from '@src/models/Vuelo';
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import { IRes } from '@src/routes/types/express/misc';
 import { IReq } from '@src/routes/types/types';
 import { IPasajero } from '@src/models/Pasajero';
 import express from 'express';
+import { Vuelo } from '@src/models/sequelize';
 
 let app = express();
 
@@ -46,6 +47,8 @@ async function persistsPasajero(id: number, mail: string): Promise<boolean> {
 //En esta seccion estan definidos todos los gets
 
 async function getAllVuelos(): Promise<IVuelo[]> {
+  const vuelos = await Vuelo.findAll();
+  console.log(vuelos);
   const db = await orm.openDb();
   return db.vuelos;
 }
